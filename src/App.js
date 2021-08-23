@@ -10,14 +10,12 @@ function App() {
     setPage(page)
   }
 
-  const Page = page === 'albuns' ? Albuns : Counter
-
   return (
     <>
       <h2>{page}</h2>
       <button onClick={() => handlePageChange('albuns')}>Álbuns</button>
       <button onClick={() => handlePageChange('contador')}>Contador</button>
-      <Page />
+      { page === 'albuns' ? <Albuns /> : <Counter /> } 
     </>
   )
 }
