@@ -1,6 +1,8 @@
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 const Albuns = () => {
+  const [albums, setAlbums] = useState()
+
   useEffect(() => {
     fetch('https://jsonplaceholder.typicode.com/albums')
       // .then(response => {
@@ -8,11 +10,22 @@ const Albuns = () => {
       // })
       .then(response => response.json())
       .then(data => {
-        console.log(data)
+        setAlbums(data)
       })
   }, [])
   return (
-    <h1>Álbuns</h1>
+    <div>
+      <h1>Álbuns</h1>
+      {
+        albums.map(album => {
+          return (
+            <div>
+              <spam>{album.title} - id: {album.id}</spam>
+            </div>
+          )
+        })
+      }
+    </div>
   )
 }
 
