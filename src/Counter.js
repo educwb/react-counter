@@ -4,17 +4,17 @@ import './Counter.css'
 
 const Counter = () => {
 
-  const handleOnClick = () => {
-    alert('counter')
+  const handleOnClick = operador => {
+    alert(operador)
   }
 
   return (
     <div className="counter">
       <span>5</span>
-      <button onClick={handleOnClick}>-</button>
-      <button>+</button>
+      <button onClick={() => handleOnClick('-')}>-</button>
+      <button onClick={() => handleOnClick('+')}>+</button>
     </div>
   )
 }
 
-export default Counter;
+export default Counter
