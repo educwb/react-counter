@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 
-import Albums from './Albums'
-import Counter from './Counter'
-import Users from './Users'
-import Movies from './Movies'
-import Template from './Template'
+import Albums from './pages/Albums'
+import Counter from './pages/Counter'
+import Users from './pages/Users'
+import Movies from './pages/Movies'
+import Template from './templates/Template'
 
 const defaultPage = 'albums'
 

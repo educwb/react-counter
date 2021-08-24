@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import './Counter.css'
+import '../pages/Counter.css'
 
 const Counter = () => {
   // useState é um método que retorna um array

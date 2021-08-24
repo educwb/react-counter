@@ -3,3 +3,7 @@ useState
 useEffect
 
 https://jsonplaceholder.typicode.com/
+
+// PAGES
+// TEMPLATE
+// COMPONENTS (quando recebe algo e só exibe na tela)

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 
-import './Movies.css'
-import Loading from './Loading'
+import '../pages/Movies.css'
+import Loading from '../components/Loading'
 
 const Movies = () => {
   const [isLoading, setIsLoading] = useState(false)
