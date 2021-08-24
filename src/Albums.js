@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
 
-import Template from './Template'
 import Loading from './Loading'
 
 const Albuns = () => {
@@ -21,7 +20,7 @@ const Albuns = () => {
       })
   }, [])
   return (
-    <Template title="Álbuns">
+    <>
       <Loading visible={isLoading} />
       {
         albums.map(album => {
@@ -32,7 +31,7 @@ const Albuns = () => {
           )
         })
       }
-    </Template>
+    </>
   )
 }
 

@@ -4,6 +4,7 @@ import Albums from './Albums'
 import Counter from './Counter'
 import Users from './Users'
 import Movies from './Movies'
+import Template from './Template'
 
 const defaultPage = 'albums'
 
@@ -21,10 +22,9 @@ const pages = {
     component: Users,
   },
   movies: {
-    text: 'Movies',
+    text: 'Filmes',
     component: Movies,
   }
-  
 }
 
 function App() {
@@ -36,16 +36,10 @@ function App() {
 
   const Page = pages[page].component
 
-  const pageNames = Object.keys(pages)
-
   return (
-    <div className="app">
-      {
-        pageNames.map(page => <button onClick={() => handlePageChange(page)}>{pages[page].text}</button>)
-      }
-      
+    <Template pages={pages} activePage={page} onChangePage={handlePageChange}>
       { Page && <Page className="page" /> }
-    </div>
+    </Template>
   )
 }
 

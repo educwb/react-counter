@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
 import './Counter.css'
-import Template from './Template'
 
 const Counter = () => {
   // useState é um método que retorna um array
@@ -29,14 +28,14 @@ const Counter = () => {
   }
 
   return (
-    <Template title="Contador">
+    <>
       <div className="counter">
         <span>{contador}</span>
         <button onClick={() => handleOnClick('-')}>-</button>
         <button onClick={() => handleOnClick('+')}>+</button>
         <button onClick={() => setTexto('Novo texto')}>{texto}</button>
       </div>
-    </Template>
+    </>
   )
 }
 

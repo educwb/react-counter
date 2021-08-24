@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
 import './Movies.css'
-import Template from './Template'
 import Loading from './Loading'
 
 const Movies = () => {
@@ -19,7 +18,7 @@ const Movies = () => {
       })
   }, [])
   return (
-    <Template title="Filmes" className="movies">
+    <>
       <Loading visible={isLoading} />
       {
         // console.log(movies)
@@ -33,7 +32,7 @@ const Movies = () => {
           )
         })
       }
-    </Template>
+    </>
   )
 }
 
