@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-import Header from './Header'
+import Template from './Template'
 import Loading from './Loading'
 
 const Albuns = () => {
@@ -18,8 +18,7 @@ const Albuns = () => {
       })
   }, [])
   return (
-    <div>
-      <Header title="Usuários"/>
+    <Template title="Usuários">
       <Loading visible={isLoading} />
       {
         users.map(user => {
@@ -33,7 +32,7 @@ const Albuns = () => {
           )
         })
       }
-    </div>
+    </Template>
   )
 }
 
