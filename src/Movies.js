@@ -1,27 +1,27 @@
 import React, { useState, useEffect } from 'react'
 
 import './Movies.css'
+import Header from './Header'
+import Loading from './Loading'
 
 const Movies = () => {
-  const [loading, setLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const [movies, setMovies] = useState([]) 
 
   useEffect(() => {
-    setLoading(true)
+    setIsLoading(true)
 
     fetch('https://imdb-api.com/en/API/SearchMovie/k_26zeqhab/matrix')
       .then(response => response.json())
       .then(data => {
         setMovies(data.results)
-        setLoading(false)
+        setIsLoading(false)
       })
   }, [])
   return (
     <div className="movies">
-      <h1>Movies</h1>
-      {
-        loading === true ? 'Carregando...' : ''
-      }
+      <Header title="Movies" />
+      <Loading visible={isLoading} />
       {
         // console.log(movies)
         movies.map(movie => {

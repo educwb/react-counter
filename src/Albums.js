@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react'
 
+import Header from './Header'
+import Loading from './Loading'
+
 const Albuns = () => {
-  const [loading, setLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const [albums, setAlbums] = useState([]) // no vídeo foi necessário useState([]) para não dá erro
 
   useEffect(() => {
-    setLoading(true)
+    setIsLoading(true)
 
     fetch('https://jsonplaceholder.typicode.com/albums')
       // .then(response => {
@@ -14,15 +17,13 @@ const Albuns = () => {
       .then(response => response.json())
       .then(data => {
         setAlbums(data)
-        setLoading(false)
+        setIsLoading(false)
       })
   }, [])
   return (
     <div>
-      <h1>Álbuns</h1>
-      {
-        loading === true ? 'Carregando...' : ''
-      }
+      <Header title="Álbuns" />
+      <Loading visible={isLoading} />
       {
         albums.map(album => {
           return (
